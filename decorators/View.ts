@@ -1,7 +1,7 @@
 import path from "path";
-import {BaseEvent} from "../components/eventmanager/BaseEvent";
-import {Response} from "../http/Response";
-import {JSONResponse} from "../http/JSONResponse";
+import {BaseEvent} from "../../components/eventmanager/BaseEvent";
+import {Response} from "../../http/Response";
+import {JSONResponse} from "../../http/JSONResponse";
 
 export const View = (headers: any = {}) => {
     return async (
