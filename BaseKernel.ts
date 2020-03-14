@@ -3,8 +3,8 @@ import fs from "fs";
 import yaml from "js-yaml";
 import { ContainerBuilder, Definition, JsFileLoader, JsonFileLoader, YamlFileLoader } from "node-dependency-injection";
 import path from "path";
-import EventManager from "../components/eventmanager/service/EventManager";
-import {Server} from "../http/Server";
+import EventManager from "@carbonfrog/eventmanager/service/EventManager";
+import {Server} from "@carbonfrog/http/Server";
 import {BaseComponentInterface} from "./BaseComponentInterface";
 
 export class BaseKernel {
