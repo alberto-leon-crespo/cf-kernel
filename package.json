@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/alberto-leon-crespo/cf-kernel#readme",
   "dependencies": {
+    "js-yaml": "^3.13.1",
     "node-dependency-injection": "^2.6.2"
   }
 }
