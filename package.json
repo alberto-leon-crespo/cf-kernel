@@ -1,0 +1,25 @@
+{
+  "name": "@carbonfrog/kernel",
+  "version": "0.1.0",
+  "description": "Carbonfrog kernel package",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alberto-leon-crespo/cf-kernel.git"
+  },
+  "keywords": [
+    "carbonfrog",
+    "kernel",
+    "components",
+    "controller"
+  ],
+  "author": "Alberto León Crespo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/alberto-leon-crespo/cf-kernel/issues"
+  },
+  "homepage": "https://github.com/alberto-leon-crespo/cf-kernel#readme"
+}
