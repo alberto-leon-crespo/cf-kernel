@@ -4,14 +4,9 @@
   "description": "Carbonfrog kernel package",
   "main": "index.js",
   "scripts": {
-    "preinstall": "link-module-alias",
-    "build": "tsc",
     "install": "npm run build",
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "_moduleAliases": {
-    "@carbonfrog/kernel" : "../kernel",
-    "@carbonfrog/eventmanager" : "../components/eventmanager"
   },
   "repository": {
     "type": "git",
