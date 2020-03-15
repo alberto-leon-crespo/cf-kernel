@@ -4,6 +4,9 @@
   "description": "Carbonfrog kernel package",
   "main": "index.js",
   "scripts": {
+    "postinstall": "link-module-alias",
+    "build": "tsc",
+    "install": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
