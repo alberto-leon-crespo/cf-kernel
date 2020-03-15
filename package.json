@@ -9,6 +9,10 @@
     "install": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "_moduleAliases": {
+    "@carbonfrog/kernel" : "../kernel",
+    "@carbonfrog/eventmanager" : "../components/eventmanager"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/alberto-leon-crespo/cf-kernel.git"
