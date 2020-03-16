@@ -26,6 +26,7 @@
   "homepage": "https://github.com/alberto-leon-crespo/cf-kernel#readme",
   "dependencies": {
     "@types/node": "^13.9.1",
+    "@types/path-to-regexp": "^1.7.0",
     "js-yaml": "^3.13.1",
     "node-dependency-injection": "^2.6.2"
   },

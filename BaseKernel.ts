@@ -1,7 +1,7 @@
 import {EventEmitter} from "events";
 import fs from "fs";
 import yaml from "js-yaml";
-import { ContainerBuilder, Definition, JsFileLoader, JsonFileLoader, YamlFileLoader } from "node-dependency-injection";
+import {ContainerBuilder, Definition, JsFileLoader, JsonFileLoader, YamlFileLoader} from "node-dependency-injection";
 import path from "path";
 import EventManager from "@carbonfrog/eventmanager/service/EventManager";
 import {Server} from "@carbonfrog/http/Server";

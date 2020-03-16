@@ -1,7 +1,8 @@
 // @ts-ignore
 import { ContainerBuilder } from "node-dependency-injection";
+import { BaseControllerInterface } from "./BaseControllerInterface";
 
-export class BaseController {
+export class BaseController implements BaseControllerInterface{
 
     private container: ContainerBuilder;
 

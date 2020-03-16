@@ -8,15 +8,20 @@
     "moduleResolution": "node",
     "sourceMap": true,
     "outDir": "dist",
-    "rootDir": ".",
+    "rootDir": "../",
     "baseUrl": ".",
     "paths": {
       "*": [
         "node_modules/*"
       ]
-    }
+    },
+    "composite": true
   },
   "include": [
-    "**/*"
+    "**/*",
+    "../components/eventmanager/BaseEvent.ts",
+    "../http/JSONResponse.ts",
+    "../http/ParameterBag.ts",
+    "../http/Response.ts"
   ]
 }
