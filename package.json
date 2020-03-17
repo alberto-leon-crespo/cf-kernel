@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "copy-package": "shx cp -p package.json dist/kernel/package.json",
+    "copy-package": "shx cp package.json ./dist/kernel/package.json",
     "prepublish-build": "npm run build && npm run copy-package",
     "publish": "npm run prepublish-build && npm publish dist/kernel",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -31,8 +31,10 @@
     "node-dependency-injection": "^2.6.2"
   },
   "devDependencies": {
+    "@types/js-yaml": "^3.12.2",
     "@types/node": "^13.9.1",
     "@types/path-to-regexp": "^1.7.0",
-    "@types/js-yaml": "^3.12.2"
+    "shelljs": "^0.8.3",
+    "shx": "^0.3.2"
   }
 }
