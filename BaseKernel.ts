@@ -3,7 +3,7 @@ import fs from "fs";
 import yaml from "js-yaml";
 import {ContainerBuilder, Definition, JsFileLoader, JsonFileLoader, YamlFileLoader} from "node-dependency-injection";
 import path from "path";
-import {Server} from "@carbonfrog/http/Server";
+import {Server} from "./http/Server";
 import {BaseComponentInterface} from "./BaseComponentInterface";
 
 export class BaseKernel {

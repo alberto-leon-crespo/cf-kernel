@@ -18,10 +18,6 @@
     "composite": true
   },
   "include": [
-    "**/*",
-    "../components/eventmanager/BaseEvent.ts",
-    "../http/JSONResponse.ts",
-    "../http/ParameterBag.ts",
-    "../http/Response.ts"
+    "**/*"
   ]
 }
