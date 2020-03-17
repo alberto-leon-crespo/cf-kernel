@@ -5,8 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build": "tsc",
-    "prepublishOnly": "npm run build",
-    "publish": "npm publish dist/kernel",
+    "copy-package": "shx cp -p package.json dist/kernel/package.json",
+    "prepublish-build": "npm run build && npm run copy-package",
+    "publish": "npm run prepublish-build && npm publish dist/kernel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
