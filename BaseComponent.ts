@@ -1,4 +1,3 @@
-// @ts-ignore
 import {ContainerBuilder, YamlFileLoader, JsFileLoader, JsonFileLoader, FileLoader} from "node-dependency-injection";
 
 export class BaseComponent {
