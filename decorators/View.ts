@@ -1,7 +1,7 @@
 import path from "path";
 import {BaseEvent} from "../BaseEvent";
-import {Response} from "@carbonfrog/http/Response";
-import {JSONResponse} from "@carbonfrog/http/JSONResponse";
+import {Response} from "../http/Response";
+import {JSONResponse} from "../http/JSONResponse";
 
 export const View = (headers: any = {}) => {
     return async (
