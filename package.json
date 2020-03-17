@@ -6,8 +6,8 @@
   "scripts": {
     "build": "tsc",
     "copy-package": "shx cp -p package.json dist/kernel/package.json",
-    "prepublishOnly": "npm run build && npm run copy-package",
-    "publish": "npm publish dist/kernel",
+    "prepublish-build": "npm run build && npm run copy-package",
+    "publish": "npm run prepublish-build && npm publish dist/kernel",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
