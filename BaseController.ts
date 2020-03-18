@@ -1,4 +1,3 @@
-// @ts-ignore
 import { ContainerBuilder } from "node-dependency-injection";
 import { BaseControllerInterface } from "./BaseControllerInterface";
 
