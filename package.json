@@ -26,12 +26,12 @@
  "homepage": "https://github.com/alberto-leon-crespo/cf-kernel#readme",
  "dependencies": {
   "js-yaml": "^3.13.1",
-  "node-dependency-injection": "^2.6.2"
+  "node-dependency-injection": "^2.6.2",
+  "@types/path-to-regexp": "^1.7.0",
+  "@types/js-yaml": "^3.12.2"
  },
  "devDependencies": {
-  "@types/js-yaml": "^3.12.2",
   "@types/node": "^13.9.1",
-  "@types/path-to-regexp": "^1.7.0",
   "shelljs": "^0.8.3",
   "shx": "^0.3.2"
  }
