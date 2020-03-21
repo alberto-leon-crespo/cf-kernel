@@ -1,13 +1,14 @@
 {
   "compilerOptions": {
     "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
     "module": "esnext",
     "esModuleInterop": true,
     "target": "es2015",
     "noImplicitAny": true,
     "moduleResolution": "node",
     "sourceMap": true,
-    "outDir": "dist",
+    "outDir": "dist/esm",
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
