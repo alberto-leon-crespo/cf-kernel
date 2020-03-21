@@ -1,8 +1,8 @@
 import {EventEmitter} from "events";
-import fs from "fs";
+import * as fs from "fs";
 import * as yaml from "js-yaml";
 import {ContainerBuilder, Definition, JsFileLoader, JsonFileLoader, YamlFileLoader} from "node-dependency-injection";
-import path from "path";
+import * as path from "path";
 import {Server} from "./http/Server";
 import {BaseComponentInterface} from "./BaseComponentInterface";
 
