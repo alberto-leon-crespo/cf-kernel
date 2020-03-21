@@ -1,4 +1,4 @@
-import path from "path";
+import * as path from "path";
 import {BaseEvent} from "../BaseEvent";
 import {Response} from "../http/Response";
 import {JSONResponse} from "../http/JSONResponse";
