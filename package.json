@@ -1,12 +1,12 @@
 {
  "name": "@carbonfrog/kernel",
- "version": "0.4.13",
+ "version": "0.4.14",
  "description": "Carbonfrog kernel package",
  "type": "module",
  "main": "./dist/commonjs/index.js",
  "module": "./dist/esm/index.js",
  "exports": {
-   "./dist/esm": "./dist/esm/index.js"
+  "./dist/esm": "./dist/esm/index.js"
  },
  "scripts": {
   "test": "echo \"Error: no test specified\" && exit 1"
