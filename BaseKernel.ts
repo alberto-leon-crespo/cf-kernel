@@ -105,6 +105,9 @@ export class BaseKernel {
             }
         });
         this._Environment = process.env.CF_ENVIRONMENT;
+        if (!this._Environment) {
+            throw new Error("You must especify local environment var CF_ENVIRONMENT");
+        }
         if (this._Environment === "production") {
             process.env.PWD = path.join(process.env.PWD, "dist");
             this._RootDir = process.env.PWD;
