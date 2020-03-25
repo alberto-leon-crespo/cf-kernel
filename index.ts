@@ -11,3 +11,5 @@ export {ParameterBag} from './http/ParameterBag';
 export {Request} from './http/Request';
 export {Response} from './http/Response';
 export {Server} from './http/Server';
+export {Controller} from './decorators/Controller';
+export {View} from './decorators/View';
