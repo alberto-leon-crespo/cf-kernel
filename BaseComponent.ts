@@ -21,7 +21,7 @@ export class BaseComponent {
         ).toString();
         const envVars = {...process.env};
         for (const envParameterName in envVars) {
-            fileContent = fileContent.replace(/env\((.*)\)/gmi, envVars[envParameterName]);
+            fileContent = fileContent.replace(/%env\((.*)\)%/gmi, envVars[envParameterName]);
         }
         const tmpFile = fs.mkdtempSync(String((new Date()).getMilliseconds()));
         fs.writeFileSync(tmpFile, fileContent);
