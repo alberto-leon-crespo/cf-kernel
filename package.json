@@ -1,6 +1,6 @@
 {
  "name": "@carbonfrog/kernel",
- "version": "0.4.23",
+ "version": "0.4.24",
  "description": "Carbonfrog kernel package",
  "type": "module",
  "main": "./dist/commonjs/index.js",
