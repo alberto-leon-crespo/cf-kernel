@@ -125,7 +125,7 @@ export class BaseKernel {
 
     private initializeComponents() {
         for (const componentIndex in this._Components) {
-            this._Components[componentIndex].load(this._Container);
+            this._Components[componentIndex].loadComponent(this._Container);
         }
     }
 
