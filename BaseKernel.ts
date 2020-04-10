@@ -3,6 +3,7 @@ import * as fs from "fs";
 import * as yaml from "js-yaml";
 import {ContainerBuilder, Definition, JsFileLoader, JsonFileLoader, YamlFileLoader} from "node-dependency-injection";
 import * as path from "path";
+import * as tmp from "tmp";
 import {Server} from "./http/Server";
 import {BaseComponentInterface} from "./BaseComponentInterface";
 
@@ -78,12 +79,12 @@ export class BaseKernel {
         return this._Container.get('server');
     }
 
-    private parseEnvironmentVars(rawFileContent: string, fileExtension: string): string {
+    private parseEnvironmentVars(rawFileContent: string): string {
         const envVars = {...process.env};
         for (const envParameterName in envVars) {
             rawFileContent = rawFileContent.replace(/%env\((.*)\)%/gmi, envVars[envParameterName]);
         }
-        const tmpFile = fs.mkdtempSync(String((new Date()).getMilliseconds()));
+        const tmpFile = tmp.fileSync();
         fs.writeFileSync(tmpFile, rawFileContent);
         return tmpFile;
     }
@@ -95,7 +96,7 @@ export class BaseKernel {
         fs.readdirSync(this._ConfigDir).forEach((file) => {
             let rawContent = fs.readFileSync(path.join(this._ConfigDir, file)).toString();
             const [fileName, fileNameWithoutExtension, fileExtension] =/^([a-zA-Z]*)\.(\S+)$/gmi.exec(file);
-            let parsedFilePath = this.parseEnvironmentVars(rawContent, fileExtension);
+            let parsedFilePath = this.parseEnvironmentVars(rawContent);
             switch (fileExtension.toLowerCase()) {
                 case "json":
                     jsonFileLoader.load(parsedFilePath);
