@@ -78,31 +78,39 @@ export class BaseKernel {
         return this._Container.get('server');
     }
 
+    private parseEnvironmentVars(rawFileContent: string, fileExtension: string): string {
+        const envVars = {...process.env};
+        for (const envParameterName in envVars) {
+            rawFileContent = rawFileContent.replace(/%env\((.*)\)%/gmi, envVars[envParameterName]);
+        }
+        const tmpFile = fs.mkdtempSync(String((new Date()).getMilliseconds()));
+        fs.writeFileSync(tmpFile, rawFileContent);
+        return tmpFile;
+    }
+
     private initializeContainerConfig() {
         const yamlFileLoader: YamlFileLoader = new YamlFileLoader(this._Container);
         const jsonFileLoader: JsonFileLoader = new JsonFileLoader(this._Container);
         const jsFileLoader: YamlFileLoader = new JsFileLoader(this._Container);
         fs.readdirSync(this._ConfigDir).forEach((file) => {
-            const rawContent = fs.readFileSync(path.join(this._ConfigDir, file));
-            const content = yaml.safeLoad(rawContent.toString());
-            for (const key of Object.keys(content)) {
-                this._Container.setParameter(key, content[key]);
-            }
+            let rawContent = fs.readFileSync(path.join(this._ConfigDir, file)).toString();
             const [fileName, fileNameWithoutExtension, fileExtension] =/^([a-zA-Z]*)\.(\S+)$/gmi.exec(file);
+            let parsedFilePath = this.parseEnvironmentVars(rawContent, fileExtension);
             switch (fileExtension.toLowerCase()) {
                 case "json":
-                    jsonFileLoader.load(path.join(this._ConfigDir, file));
+                    jsonFileLoader.load(parsedFilePath);
                     break;
                 case "js":
-                    jsFileLoader.load(path.join(this._ConfigDir, file));
+                    jsFileLoader.load(parsedFilePath);
                     break;
                 case "yaml":
-                    yamlFileLoader.load(path.join(this._ConfigDir, file));
+                    yamlFileLoader.load(parsedFilePath);
                     break;
                 case "yml":
-                    yamlFileLoader.load(path.join(this._ConfigDir, file));
+                    yamlFileLoader.load(parsedFilePath);
                     break;
             }
+            fs.unlinkSync(parsedFilePath);
         });
         this._Environment = process.env.CF_ENVIRONMENT;
         if (!this._Environment) {
