@@ -11,6 +11,11 @@ export class BaseComponent {
     protected _containerBuilder: ContainerBuilder;
     protected _componentConfigFilesFormat: string;
 
+    protected setContainerBuilder(containerBuilder: ContainerBuilder): this {
+        this._containerBuilder = containerBuilder;
+        return this;
+    }
+
     protected setComponentConfigFilesFormat(format: string): this {
         if (!this._containerBuilder) {
             throw new Error("You need first to specify container builder with setComponentConfigFilesFormat()");
